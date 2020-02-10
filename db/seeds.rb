@@ -1,0 +1,31 @@
+project_1 = Project.create(name: "Visit Oz" , description: "We're off to see the wizard!")
+user_1 = User.create(first_name: "Dorothy" , last_name: "Gale",  email: "dorothy@kansas.com")
+user_2 = User.create(first_name: "Cowardly", last_name: "Lion", email: "scared@overtherainbow.com")
+user_3 = User.create(first_name: "Glinda", last_name: "The Good", email: "glinda@overtherainbow.com")
+assignment = Assignment.create(user: user_1, project: project_1)
+
+task_1 = Task.create(name: "Follow the Yellow Brick Road", description: "Skip off as the munchkins serenade", due_date: Date.today, user: user_1, project: project_1)
+
+nick_1 = User.create(first_name: "Nick", last_name: "Alberts", email: "nick.alberts@launchacademy.com")
+nick_2 = User.create(first_name: "Nick", last_name: "Kung", email: "nick.kung@nicklabs.biz", manager: nick_1)
+project_2 = Project.create(name: "Incorporate a Nick only company" , description: "just throw money at the problem", manager: nick_1, urgent: true)
+assignment = Assignment.create(user: nick_1, project: project_1)
+assignment_2 = Assignment.create(user: nick_1, project: project_2)
+assignment_3 = Assignment.create(user: nick_2, project: project_2)
+
+# -- polymorphic
+#
+# project_1 = Project.create(name: "Visit Oz" , description: "We're off to see the wizard!")
+# user_1 = User.create(first_name: "Dorothy" , last_name: "Gale",  email: "dorothy@kansas.com")
+# user_2 = User.create(first_name: "Cowardly", last_name: "Lion", email: "scared@overtherainbow.com")
+# user_3 = User.create(first_name: "Glinda", last_name: "The Good", email: "glinda@overtherainbow.com")
+# assignment = Assignment.create(user: user_1, project: project_1)
+#
+# nick_1 = User.create(first_name: "Nick", last_name: "Alberts", email: "nick.alberts@launchacademy.com")
+# nick_2 = User.create(first_name: "Nick", last_name: "Kung", email: "nick.kung@nicklabs.biz", manager: nick_1)
+# project_2 = Project.create(name: "Incorporate a Nick only company" , description: "just throw money at the problem", manager: nick_1, urgent: true)
+# assignment = Assignment.create(user: nick_1, project: project_1)
+# assignment_2 = Assignment.create(user: nick_1, project: project_2)
+# assignment_3 = Assignment.create(user: nick_2, project: project_2)
+#
+# task_1 = Task.create(name: "create a state of Nick", description: "both in our minds and on the map", due_date: Date.today, taskable_id: nick_1.id, taskable_type: nick_1.class.name)
