@@ -6,20 +6,20 @@ class User < ActiveRecord::Base
   has_many :projects, through: :assignments
   has_many :tasks
 
-  # custom association
+
+  
+
+  # User(manager) / Projects relationship: custom association - what if a user can be both working on the project and managing it
   has_many :managed_projects, class_name: "Project", foreign_key: "manager_id"
 
-  # self-join
+  # self-assocation
   has_many :employees, class_name: "User", foreign_key: "manager_id"
+
   belongs_to :manager, class_name: "User", optional: true
 
-  # scope
-  scope :nicks, -> { where(first_name: "Nick")}
 
-  # --- polymorphic
-  #   has_many :tasks, as: :taskable
+  # # polymorphic
+  # # https://guides.rubyonrails.org/association_basics.html#polymorphic-associations
+  # has_many :tasks, as: :taskable
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
 end
