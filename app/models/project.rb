@@ -3,9 +3,9 @@ class Project < ActiveRecord::Base
 
   has_many :assignments
   has_many :users, through: :assignments
-  has_many :tasks
+  # has_many :tasks
 
-  # belongs_to :manager, class_name: "User", optional: true
+  belongs_to :manager, class_name: "User", optional: true
 
   # --- polymorphic
   # has_many :tasks, as: :taskable

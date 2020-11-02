@@ -22,4 +22,4 @@ task_1 = Task.create(name: "perform occult HR ritual", description: "Cthulu reig
 
 # -- Polymorphic
 
-# task_1 = Task.create(name: "create a state of Nick", description: "both in our minds and on the map", due_date: Date.today, taskable_id: nick_1.id, taskable_type: "User")
+task_1 = Task.create(name: "create a state of Nick", description: "both in our minds and on the map", due_date: Date.today, taskable_id: project_1.id, taskable_type: "User")

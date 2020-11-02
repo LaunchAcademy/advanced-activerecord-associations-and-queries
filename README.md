@@ -12,23 +12,6 @@
 - an employee (user) has a manager (user)
 - can be made into a join table
 
-
-Ketty's App (mentors / mentees)
-- Mentor creates a mentorship listing (might become a join between a mentor and a mentee)
-- Mentee looks at the mentorship listings 
-- either the listing becomes a join between mentee and mentor 
-
-Jay 
-artist 
-artist image 
-label 
-label logo 
-
-artist has many albumns 
-artist also has a alias column 
-when making the album, say artist_alias: true
-
-
 ### Polymorphic Associations
 - likely not relevant to BTs
 - what if a record can belong to either a user, or a project?
@@ -39,7 +22,7 @@ when making the album, say artist_alias: true
 - show seeds  for context
 
  class AddTaskablePolymorphismToTasks < ActiveRecord::Migration[5.1]
-    
+
    def change
      remove_column :tasks, :user_id
      remove_column :tasks, :project_id

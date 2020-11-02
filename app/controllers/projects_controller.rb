@@ -8,5 +8,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(@id)
     @users = @project.users
     @tasks = @project.tasks
+    @manager = @project.manager
+    @managed_employees = @manager.employees
   end
 end

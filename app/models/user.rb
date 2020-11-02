@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   has_many :tasks
 
 
-  
 
   # User(manager) / Projects relationship: custom association - what if a user can be both working on the project and managing it
   has_many :managed_projects, class_name: "Project", foreign_key: "manager_id"
+
 
   # self-assocation
   has_many :employees, class_name: "User", foreign_key: "manager_id"

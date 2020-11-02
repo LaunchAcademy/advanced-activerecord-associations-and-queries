@@ -5,5 +5,5 @@ class Task < ActiveRecord::Base
   belongs_to :user, optional: true
 
   # --- polymorphic
-  # belongs_to :taskable, polymorphic: true
+  belongs_to :taskable, polymorphic: true
 end
