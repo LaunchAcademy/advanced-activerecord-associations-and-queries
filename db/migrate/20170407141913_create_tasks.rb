@@ -7,6 +7,10 @@ class CreateTasks < ActiveRecord::Migration[5.1]
 
       t.belongs_to :user
       t.belongs_to :project, null: false
+
+      # t.references :taskable, polymorphic: true
+
+      t.timestamps null: false
     end
   end
 end

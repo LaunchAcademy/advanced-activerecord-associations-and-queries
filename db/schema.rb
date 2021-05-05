@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20200210160044) do
     t.string "due_date"
     t.bigint "user_id"
     t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end

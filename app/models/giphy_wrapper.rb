@@ -8,17 +8,20 @@ class GiphyWrapper
   end
 
   def self.retrieve_gifs(query)
-    gifData = giphy_request(query)
-    urls = gif_urls(gifData)
-    GifsWrapper.new(urls)
+    giphy_response = giphy_request(query)
+    parsed_response = parse_request(giphy_response)
+    urls = gif_urls(parsed_response)
+    GiphyWrapper.new(urls)
   end
-
 
   def self.giphy_request(query)
-    response = Faraday.get("#{BASE_URL}&q=#{query}")
-    return JSON.parse(response.body)
+    return Faraday.get("#{BASE_URL}&q=#{query}")
   end
-
+  
+  def self.parse_request(response)
+    return JSON.parse(response.body)  
+  end
+ 
   def self.gif_urls(parsed_gif_array)
     image_urls = []
     parsed_gif_array["data"].each do |gif_data|
