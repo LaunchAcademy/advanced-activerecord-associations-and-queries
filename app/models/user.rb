@@ -11,9 +11,13 @@ class User < ActiveRecord::Base
   # # User(manager) / Projects relationship: custom association
   
   # # what if a user can be both working on the project (assigned) and managing it
+  # has_many :projects
+  # # ^^ oh no! already defined above
 
   has_many :managed_projects, class_name: "Project", foreign_key: "manager_id"
-
+  # # Breaking convention, need to provide additional information
+  # # ^^ Look at `manager_id` on Projects table
+  # nick.managed_projects
 
 
   # # 2.) Self-Join
@@ -30,5 +34,4 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
-
 end

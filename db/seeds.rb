@@ -22,8 +22,10 @@ project_2 = Project.create(name: "Incorporate a Nick only company" , description
 # Assignments
 assignment = Assignment.create(user: user_1, project: project_1)
 assignment_1 = Assignment.create(user: nick_1, project: project_1)
-assignment_2 = Assignment.create(user: nick_1, project: project_2)
-assignment_3 = Assignment.create(user: cooper_1, project: project_2)
+assignment_2 = Assignment.create(user: user_2, project: project_1)
+assignment_3 = Assignment.create(user: nick_1, project: project_2)
+assignment_4 = Assignment.create(user: cooper_1, project: project_2)
+assignment_5 = Assignment.create(user: user_3, project: project_2)
 
 # Tasks
 task_1 = Task.create(name: "Follow the Yellow Brick Road", description: "Skip off as the munchkins serenade", due_date: Date.today, user: user_1, project: project_1)
