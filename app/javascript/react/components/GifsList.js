@@ -12,7 +12,7 @@ const GifsList = (props) => {
 
   useEffect(() => {
     getGifs()
-  })
+  }, [])
 
   const listedGifs = gifs.map((gif) => {
     return (
