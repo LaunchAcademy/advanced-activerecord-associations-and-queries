@@ -9,7 +9,7 @@ task_1 = Task.create(name: "Follow the Yellow Brick Road", description: "Skip of
 # Users
 nick_1 = User.create(first_name: "Nick", last_name: "Alberts", email: "nick.alberts@launchacademy.com")
 
-# Project / Manager Seed
+# 1.) Project / Manager Seed
 project_2 = Project.create(name: "Incorporate a Nick only company" , description: "just throw money at the problem", manager_id: nick_1.id, urgent: true)
 
 # project_2 = Project.create(name: "Incorporate a Kerrin only company" , description: "just throw money at cats", manager: nick_1, urgent: true)

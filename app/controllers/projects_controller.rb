@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
     @users = @project.users
     @tasks = @project.tasks
     @manager = @project.manager
-    @managed_employees = @manager.employees
+    if @manager
+      @managed_employees = @manager.employees
+    end
   end
 end
