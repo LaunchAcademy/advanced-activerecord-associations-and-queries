@@ -17,11 +17,11 @@ class GiphyWrapper
   def self.giphy_request(query)
     return Faraday.get("#{BASE_URL}&q=#{query}")
   end
-  
+
   def self.parse_request(response)
     return JSON.parse(response.body)  
   end
- 
+
   def self.gif_urls(parsed_gif_array)
     image_urls = []
     parsed_gif_array["data"].each do |gif_data|

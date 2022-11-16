@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_160044) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "manager_id"
+    t.index ["manager_id"], name: "index_projects_on_manager_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_160044) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "manager_id"
+    t.index ["manager_id"], name: "index_users_on_manager_id"
   end
 
 end
